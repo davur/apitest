@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="apitestApp">
+<head>
+	<meta charset="UTF-8">
+	<title>APItest</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+	<script src="js/apitest.js"></script>
+</head>
+<body ng-controller="CallHistoryCtrl">
+
+	<div class="container">
+
+		<form method="post" role="form">
+			<div class="form-group">
+				<label for="url">URL</label>
+				<input ng-model="call_url" type="url" class="form-control" id="url" name="url" value="" placeholder="Enter URL">
+			</div>
+			<div class="form-group">
+				<label for="data">Data (json)</label>
+				<textarea ng-model="call_data" class="form-control" name="data" id="data" rows="6"></textarea>
+			</div>
+
+			<a href="#" tabindex="0" id="gogogo" class="btn btn-primary">POST</a>
+			<a href="#" tabindex="0" id="goSend" class="btn btn-primary">GET</a>
+		</form>
+
+		<div id="result"></div>
+	</div>
+</body>
+</html>
