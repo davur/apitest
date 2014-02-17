@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="apitestApp">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>APItest</title>
@@ -15,25 +15,39 @@
 
 	<script src="js/apitest.js"></script>
 </head>
-<body ng-controller="CallHistoryCtrl">
+<body>
 
 	<div class="container">
 
-		<form method="post" role="form">
-			<div class="form-group">
-				<label for="url">URL</label>
-				<input ng-model="call_url" type="url" class="form-control" id="url" name="url" value="" placeholder="Enter URL">
-			</div>
-			<div class="form-group">
-				<label for="data">Data (json)</label>
-				<textarea ng-model="call_data" class="form-control" name="data" id="data" rows="6"></textarea>
-			</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<form method="post" role="form">
+					<div class="form-group">
+						<label for="url">URL</label>
+						<input type="url" class="form-control" id="url" name="url" value="" placeholder="Enter URL">
+					</div>
+					<div class="form-group">
+						<label for="data">Data (json)</label>
+						<textarea class="form-control" name="data" id="data" rows="6">{}</textarea>
+					</div>
 
-			<a href="#" tabindex="0" id="gogogo" class="btn btn-primary">POST</a>
-			<a href="#" tabindex="0" id="goSend" class="btn btn-primary">GET</a>
-		</form>
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-primary active" for="type-get">
+							<input class="requesttype" type="radio" name="requesttype" id="type-get" value="get" checked="checked"> GET
+						</label>
+						<label class="btn btn-primary" for="type-post">
+							<input class="requesttype" type="radio" name="requesttype" id="type-post" value="post"> POST
+						</label>
+					</div>
+				</form>
 
-		<div id="result"></div>
+				<div id="result"></div>
+			</div>
+			<div class="col-sm-4">
+				<div id="history"></div>
+			</div>
+		</div>
+
 	</div>
 </body>
 </html>
